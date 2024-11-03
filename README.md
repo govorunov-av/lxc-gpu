@@ -27,7 +27,7 @@ Create special container:
     
     Open container shell and do it 
     
-    apt update && apt install gpg nvtop
+    apt update && apt install gpg
     curl -fSsL https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/3bf863cc.pub | gpg --dearmor | tee /usr/share/keyrings/nvidia-drivers.gpg > /dev/null 2>&1
     apt install dirmngr ca-certificates software-properties-common apt-transport-https dkms curl -y
     echo deb [signed-by=/usr/share/keyrings/nvidia-drivers.gpg] https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/ / | tee /etc/apt/sources.list.d/nvidia-drivers.list
