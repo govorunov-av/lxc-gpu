@@ -54,13 +54,21 @@ List you nvidia devices in proxmox:
     Add gid`s and nvidia devices in /etc/pve/lxc/<lxc_id>
 
     My file for example:
-    
-      lxc.cgroup2.devices.allow: c 510:* rwm
-    	lxc.cgroup2.devices.allow: c 195:* rwm
-    	lxc.mount.entry: /dev/nvidia0       dev/nvidia0       none bind,optional,create=file
-    	lxc.mount.entry: /dev/nvidiactl     dev/nvidiactl     none bind,optional,create=file
-    	lxc.mount.entry: /dev/nvidia-uvm     dev/nvidia-uvm     none bind,optional,create=file
-    	lxc.mount.entry: /dev/nvidia-uvm-tools     dev/nvidia-uvm-tools     none bind,optional,create=file
+        ...
+        tags:  
+        lxc.cgroup2.devices.allow: a
+        lxc.cap.drop: 
+        lxc.cgroup2.devices.allow: c 195:* rwm
+        lxc.cgroup2.devices.allow: c 510:* rwm
+        lxc.mount.entry: /dev/nvidia0       dev/nvidia0       none bind,optional,create=file
+        lxc.mount.entry: /dev/nvidiactl     dev/nvidiactl     none bind,optional,create=file
+        lxc.mount.entry: /dev/nvidia-uvm     dev/nvidia-uvm     none bind,optional,create=file
+        lxc.mount.entry: /dev/nvidia-uvm-tools     dev/nvidia-uvm-tools     none bind,optional,create=file
+        lxc.mount.entry: /dev/serial/by-id  dev/serial/by-id  none bind,optional,create=dir
+        lxc.mount.entry: /dev/ttyUSB0       dev/ttyUSB0       none bind,optional,create=file
+        lxc.mount.entry: /dev/ttyUSB1       dev/ttyUSB1       none bind,optional,create=file
+        lxc.mount.entry: /dev/ttyACM0       dev/ttyACM0       none bind,optional,create=file
+        lxc.mount.entry: /dev/ttyACM1       dev/ttyACM1       none bind,optional,create=file
 
 Configure file vim /etc/nvidia-container-runtime/config.toml on Container:
 
