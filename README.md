@@ -23,6 +23,8 @@ Create special container:
     bash -c “$(wget -qLO – https://github.com/govorunov-ag/Proxmox/raw/main/ct/docker.sh)”
     
     During installation use custom parameters -> debian -> 11 (For Proxmox 7.4, and lateest for 8.*)
+
+    Type of container privileged 
     
     
     Open container shell and do it 
