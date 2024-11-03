@@ -35,7 +35,7 @@ Create special container:
     apt install nvidia-driver cuda nvidia-smi nvidia-settings -y
     apt install nvidia-container-toolkit
     nvidia-ctk runtime configure --runtime=docker
-    reboot
+    shutdown -h now
 
 List you nvidia devices in proxmox:
   
